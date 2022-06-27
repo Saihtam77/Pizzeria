@@ -1,7 +1,10 @@
     @extends('layouts.app')
     @section('content')
+        <section class="w-100 ">
+            <!-- Validation Errors -->
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        </section>
         <section class="container ">
-            
             <form method="POST" action="{{ route('register') }}" class="d-flex flex-column align-items-center justify-content-center vh-100">
                 @csrf
 

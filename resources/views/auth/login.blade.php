@@ -1,7 +1,16 @@
 @extends('layouts.app')
     @section('content')
 
+    <section class="w-100">
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-3" :status="session('status')" />
+
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-3" :errors="$errors" />
+    </section>
+
         <section class="container d-flex flex-column">
+        
             <form method="POST" action="{{ route('login') }}" class="d-flex flex-column align-items-center justify-content-center vh-100">
                 @csrf
     

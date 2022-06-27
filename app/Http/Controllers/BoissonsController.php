@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\boissons;
-use App\Models\desserts;
-use App\Models\pizzas;
 use Illuminate\Http\Request;
 
-class AccueilController extends Controller
+class BoissonsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +14,6 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        $pizzas=pizzas::OrderBy("nom","desc")->get();
-        $boissons=boissons::OrderBy("nom","desc")->get();
-        $desserts=desserts::OrderBy("nom","desc")->get();
-        
-        return view("page.accueil", [
-            "pizzas"=>$pizzas,
-            "boissons"=>$boissons,
-            "desserts"=>$desserts
-            ]);
     }
 
     /**
@@ -33,8 +22,8 @@ class AccueilController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        return view("page.creer.ajouterBoisson");
     }
 
     /**
@@ -45,7 +34,23 @@ class AccueilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*Verification du remplissage des champs requis*/
+        $this->validate($request, [
+
+            "nom" => 'required',
+            "prix"=>"required",
+            
+        ]);
+
+        
+        /* Exportation des nouvelles donnée dans la base de donnée */
+        $boisson = new boissons;
+
+        $boisson->nom = $request->input('nom');
+        $boisson->prix = $request->input('prix');
+
+        $boisson->save();
+        return redirect()->route("accueil")->with('success', 'Nouvelle Boisson ajouter');
     }
 
     /**
@@ -67,7 +72,8 @@ class AccueilController extends Controller
      */
     public function edit($id)
     {
-        //
+         $boisson=boissons::find($id);
+         return view("page.edit.editBoisson")->with("boisson",$boisson);
     }
 
     /**
@@ -79,7 +85,23 @@ class AccueilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /*Verification du remplissage des champs requis*/
+        $this->validate($request, [
+
+            "nom" => 'required',
+            "prix"=>"required",
+            
+        ]);
+
+        
+        /* Exportation des nouvelles donnée dans la base de donnée */
+        $boisson =boissons::find($id);
+
+        $boisson->nom = $request->input('nom');
+        $boisson->prix = $request->input('prix');
+        
+        $boisson->save();
+        return redirect()->route("accueil")->with('success', 'Boissons mise a jours');
     }
 
     /**
@@ -90,6 +112,8 @@ class AccueilController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $boisson = boissons::find($id);
+        $boisson->delete();
+        return redirect()->route("accueil")->with('success', 'Boissons supprimer');
     }
 }

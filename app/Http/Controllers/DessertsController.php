@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pizzas;
+use App\Models\desserts;
 use Illuminate\Http\Request;
 
-class PizzasController extends Controller
+class DessertsController extends Controller
 {
     /**
-     * Display a listing of the resource.   
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,7 +23,7 @@ class PizzasController extends Controller
      */
     public function create()
     {
-        return view("page.creer.ajouterPizza");
+        return view("page.creer.ajouterDesserts");
     }
 
     /**
@@ -34,27 +34,26 @@ class PizzasController extends Controller
      */
     public function store(Request $request)
     {
-        /*Verification du remplissage des champs requis*/
-        $this->validate($request, [
+         /*Verification du remplissage des champs requis*/
+         $this->validate($request, [
 
             "nom" => 'required',
-            "composants"=>"required",
+            "composants"=>'required',
             "prix"=>"required",
             
         ]);
-
-       
         
         /* Exportation des nouvelles donnée dans la base de donnée */
-        $pizza = new pizzas;
+        $dessert =new desserts;
 
-        $pizza->nom = $request->input('nom');
-        $pizza->composants= $request->input('composants');
-        $pizza->prix = $request->input('prix');
-    
+        $dessert->nom = $request->input('nom');
+        $dessert->composants = $request->input('composants');
+        $dessert->prix = $request->input('prix');
 
-        $pizza->save();
-        return redirect()->route("accueil")->with('success', 'Nouvelle pizza ajouter');
+        
+
+        $dessert->save();
+        return redirect()->route("accueil")->with('success', 'Dessert Ajouter');
     }
 
     /**
@@ -76,11 +75,8 @@ class PizzasController extends Controller
      */
     public function edit($id)
     {
-        $pizza=pizzas::find($id);
-       
-        return view("page.edit.editPizza",[
-            "pizza"=>$pizza,
-        ]);
+        $dessert=desserts::find($id);
+        return view("page.edit.editDessert")->with("dessert",$dessert);
     }
 
     /**
@@ -96,24 +92,23 @@ class PizzasController extends Controller
         $this->validate($request, [
 
             "nom" => 'required',
-            "composants"=>"required",
+            "composants"=>'required',
             "prix"=>"required",
-
-        
+    
         ]);
 
         
-        
         /* Exportation des nouvelles donnée dans la base de donnée */
-        $pizza =pizzas::find($id);
+        $dessert =desserts::find($id);
 
-        $pizza->nom = $request->input('nom');
-        $pizza->composants = $request->input('composants');
-        $pizza->prix = $request->input('prix');
-       
+        $dessert->nom = $request->input('nom');
+        $dessert->composants = $request->input('composants');
+        $dessert->prix = $request->input('prix');
 
-        $pizza->save();
-        return redirect()->route("accueil")->with('success', 'Pizza mise a jours');
+     
+
+        $dessert->save();
+        return redirect()->route("accueil")->with('success', 'Dessert mit jours');
     }
 
     /**
@@ -124,8 +119,8 @@ class PizzasController extends Controller
      */
     public function destroy($id)
     {
-        $pizza = pizzas::find($id);
-        $pizza->delete();
-        return redirect()->route("accueil")->with('success', 'Pizza supprimer');    
+        $dessert = desserts::find($id);
+        $dessert->delete();
+        return redirect()->route("accueil")->with('success', 'Desserts supprimer');
     }
 }

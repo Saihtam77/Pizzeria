@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\BoissonsController;
+use App\Http\Controllers\DessertsController;
 use App\Http\Controllers\IngredientsController;
-use App\Http\Controllers\PizzaController;
+use App\Http\Controllers\PizzasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[AccueilController::class,'index'])->name("accueil");
 
+Route::get("/Mention_legal", function () {
+    return view("page.Mention_legal");
+})->name("mention_legal");
 
-Route::resource('Pizzas', PizzaController::class);
-Route::resource('Ingredients', IngredientsController::class);
+
+
+Route::resource('Pizzas', PizzasController::class);
+Route::resource("Boissons",BoissonsController::class);
+Route::resource("Desserts",DessertsController::class);
 
 
 
@@ -31,8 +39,9 @@ Route::middleware(["auth"])->group(function(){
         return view('dashboard');
     })->name("dashboard");
 
-    Route::get('/dashboard/ajouterPizza',[PizzaController::class,"create"])->name("nouvellePizza");
-
+    Route::get('/dashboard/ajouterPizza',[PizzasController::class,"create"])->name("nouvellePizza");
+    Route::get('/dashboard/ajouterBoisson',[BoissonsController::class,"create"])->name("nouvelleBoisson");
+    Route::get('/dashboard/ajouterDesserts',[DessertsController::class,"create"])->name("nouveauDessert");
 });
 
 require __DIR__.'/auth.php';

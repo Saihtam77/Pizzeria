@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ingredients extends Model
+class boissons extends Model
 {
     use HasFactory;
-
-    public function pizzas(){
-        return $this->belongsTo(pizzas::class);
-    }
 }

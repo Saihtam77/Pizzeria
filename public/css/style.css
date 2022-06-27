@@ -1,0 +1,52 @@
+html{
+  font-size: 16px;
+}
+
+#Title{
+  font-family: 'Fascinate Inline', cursive;
+}
+
+.border_transition{
+  border: 1px solid;
+  animation: border_transition 3s;
+  opacity: 1;
+}
+@keyframes border_transition {
+  from{
+    opacity: 0;
+  }
+}
+
+
+.lg_text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+}
+.sm_text{
+  font-family: Gilda Display;
+  font-size: 1.3rem ;
+}
+.more_less_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  background-color: #fff;
+  color: grey;
+  border: 1px solid ;
+  height: 40px;
+  border-radius: 50%;
+  width: 40px;
+}
+.collapse_init {
+  font-family: Gilda Display;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.65);
+}
+.inner_collapse .inner_line {
+  flex: 1 1 auto;
+  border-bottom: 1px solid;
+}
