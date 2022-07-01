@@ -155,15 +155,20 @@
         <hr class="solid mb-5">
     </section>
 
-    {{-- Google map --}}
-    <section class="container d-flex justify-content-around mb-5">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.1069311725876!2d-61.121617164572505!3d14.63164499731893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6ff77e825497ea33!2zMTTCsDM3JzUzLjkiTiA2McKwMDcnMTMuOCJX!5e0!3m2!1sfr!2sfr!4v1655729325222!5m2!1sfr!2sfr" width="600" height="450" style="border:1px solid;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="d-flex flex-column justify-content-center ms-5">
+    {{-- Google map et horraire --}}
+    <section class="container d-flex flex-column align-items-center flex-md-row mb-5 ">
+        
+        <div class="d-flex flex-column justify-content-center col-md-6 me-md-5 mb-5">
+            
             <div class="border_transition p-5">
                 <h1 class="lg_text text-center"><b>Horaire</b></h1>
                 <h2 class="text-center"> Du lundi au vendredi: <br> 17h30 à 22h</h2>
             </div>
 
+        </div>
+
+        <div class="col-md-6 mb-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.1069311725876!2d-61.121617164572505!3d14.63164499731893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6ff77e825497ea33!2zMTTCsDM3JzUzLjkiTiA2McKwMDcnMTMuOCJX!5e0!3m2!1sfr!2sfr!4v1655729325222!5m2!1sfr!2sfr" width="100%" height="450" style="border:1px solid; border-radius:30px" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 @endsection

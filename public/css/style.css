@@ -8,6 +8,7 @@ html{
 
 .border_transition{
   border: 1px solid;
+  border-radius: 30px;
   animation: border_transition 3s;
   opacity: 1;
 }
