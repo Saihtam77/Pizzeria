@@ -37,7 +37,7 @@
                 <img src="/storage/icones/hand_good.gif" class="col-12 col-md-7" alt="">
             </div>
             <h3 class="lg_text display-4">2. Faites votre choix !</h3>
-            <h6 class="sm_text">Tout noss prix (0.0) sont nets en Euros, service compris. Nos produits sont susceptibles de contenir des allergenes, nous consulter pour plus d’informations</h6>
+            <h6 class="sm_text">Tout nos prix (0.0) sont nets en Euros, service compris. Nos produits sont susceptibles de contenir des allergenes, nous consulter pour plus d’informations</h6>
         </div>
     </section>
 
