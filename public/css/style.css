@@ -5,6 +5,19 @@ html{
 #Title{
   font-family: 'Fascinate Inline', cursive;
 }
+ 
+.border_contact{
+  border: 1px solid;
+
+}
+
+.border-offset{
+  box-sizing: content-box;
+  width: 100% ;
+  height:100%;
+
+  transform: translate(-1rem);
+}
 
 .border_transition{
   border: 1px solid;

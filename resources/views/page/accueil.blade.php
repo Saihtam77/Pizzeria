@@ -1,26 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- Title --}}
-    <section class="container-fluid d-flex justify-content-md-center align-items-center mt-5 mb-5">
-        <h1 id="Title" class="display-4 font-weight-bold">Popie's Pizza</h1>
-    </section>
-
-    {{-- Contact --}}
-    <section class="container d-flex justify-content-center">
-
-        <div class="border_transition d-flex flex-column p-2 col-12 col-md-6">
-
-            <div class="border_transition d-flex flex-column justify-content-center align-items-center p-5">
-                <h3><b>Contact</b></h3>
-                <div class="d-flex flex-column flex-md-row align-items-center">
-                    <div class="col-md-3 col-5"><img src="/storage/icones/phone.png" alt="" class="img-fluid"></div>
-                    <div class="col-md-9"><h4>0596 XXXXXX</h4></div>
-                </div>
-            </div>
-
-        </div>
-
+    {{-- Logo --}}
+    <section class="container-fluid d-flex justify-content-center align-items-center mt-5 col-12 col-lg-5">
+        <img src="/storage/poppi-logo.png" class="img-fluid" alt="Logo">
     </section>
 
     {{-- presentation --}}
@@ -29,7 +12,7 @@
             <div class="d-flex justify-content-center align-items-center">
                 <img src="/storage/icones/hand_up.gif" class="col-12 col-md-7" alt="">
             </div>
-            <h3 class="lg_text display-4">1. Explorez le menu parmi ses différentes catégories…</h3>
+            <h3 class="lg_text display-4">1. PIZZERIA NAPOLETANA COMTEMPORANEA<br>DA NAPOLI CON AMORE</h3>
         </div>
 
         <div class="d-flex flex-column p-3">
@@ -159,10 +142,22 @@
     <section class="container d-flex flex-column align-items-center flex-md-row mb-5 ">
         
         <div class="d-flex flex-column justify-content-center col-md-6 me-md-5 mb-5">
+
+            <div class="border_contact d-flex flex-column p-2 col-12 mb-5">
+
+                <div class="border-offset border_contact d-flex flex-column justify-content-center align-items-center p-3">
+                    <h3><b>Contact</b></h3>
+                    <div class="d-flex flex-column flex-md-row align-items-center">
+                        <div class="col-md-3 col-5"><img src="/storage/icones/phone.png" alt="" class="img-fluid"></div>
+                        <div class="col-md-9"><h4>0596 646503</h4></div>
+                    </div>
+                </div>
+    
+            </div>
             
             <div class="border_transition p-5">
-                <h1 class="lg_text text-center"><b>Horaire</b></h1>
-                <h2 class="text-center"> Du lundi au vendredi: <br> 17h30 à 22h</h2>
+                <h1 class="lg_text text-center"><b>Horaires</b></h1>
+                <h2 class="text-center"> Du Mardi au Dimanche: <br> 17h30 à 22h</h2>
             </div>
 
         </div>

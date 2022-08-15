@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="Description" content="Venez porfiter de nos pizza fait et preparer avec amours a recuperer chez nous ou a votre domicile">
-
+        <meta name="Description" content="Venez porfiter de nos pizza fait et preparer avec amours à récuperer chez nous ou livrée a votre domicile">
+        <meta name="keywords" content="Pizza, Livraison, Domicile, Italienne, Poppi-pizza">
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
